@@ -15,8 +15,14 @@ function playRound (playerSelection, computerSelection) {
     if (player === "rock" || computer === "rock") {
       if (player === "scissors") {
         return "You lose! Rock beats scissors!";
-      } else {
+      } else if (computer == "scissors") {
         return "You win! Rock beats scissors!";
+      } else {
+        if (player === "paper") {
+          return "You win! Paper beats rock!";
+        } else {
+          return "You lose! Paper beats rock!";
+        }
       }
     }
 
@@ -37,3 +43,8 @@ function playRound (playerSelection, computerSelection) {
     }
   }
 }
+
+const player = "scissors";
+const computer = getComputerChoice();
+
+console.log(playRound(player, computer));
