@@ -58,11 +58,15 @@ function getCleanInput () {
       clean = true;
     } else {
       alert("Please enter only Rock/Paper/Scissors");
+      input = "";
     }
-  } while (clean);
+  } while (!clean);
+
+  return input;
 }
 
 function game () {
+  greet();
   for (let i = 0; i < 5; i++) {
     console.log(playRound(getCleanInput(), getComputerChoice()));
   }
