@@ -44,6 +44,10 @@ function playRound (playerSelection, computerSelection) {
   }
 }
 
+function greet () {
+  alert("Welcome to rock, paper, scissors! Please enter Rock, Paper, or Scissors.");
+}
+
 function getCleanInput () {
   let clean = false;
   let input = "";
@@ -52,6 +56,8 @@ function getCleanInput () {
     input = prompt().toLowerCase();
     if (input === "rock" || input === "scissors"|| input === "paper") {
       clean = true;
+    } else {
+      alert("Please enter only Rock/Paper/Scissors");
     }
   } while (clean);
 }
