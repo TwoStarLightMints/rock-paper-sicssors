@@ -5,4 +5,14 @@ function getComputerChoice () {
   return choices[choice];
 }
 
-console.log(getComputerChoice());
+function playRound (playerSelection, computerSelection) {
+  let player = playerSelection.toLowerCase();
+  let computer = computerSelection.toLowerCase();
+
+  if (player == computer) {
+    return "It's a draw";
+  }
+}
+
+// Paper beats rock, rock beats scissors, scissors beats paper
+// The same item makes a draw
