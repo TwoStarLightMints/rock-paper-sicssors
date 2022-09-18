@@ -44,7 +44,22 @@ function playRound (playerSelection, computerSelection) {
   }
 }
 
-const player = "scissors";
-const computer = getComputerChoice();
+function getCleanInput () {
+  let clean = false;
+  let input = "";
+  
+  do {
+    input = prompt().toLowerCase();
+    if (input === "rock" || input === "scissors"|| input === "paper") {
+      clean = true;
+    }
+  } while (clean);
+}
 
-console.log(playRound(player, computer));
+function game () {
+  for (let i = 0; i < 5; i++) {
+    console.log(playRound(getCleanInput(), getComputerChoice()));
+  }
+}
+
+game();
