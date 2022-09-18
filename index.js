@@ -12,9 +12,28 @@ function playRound (playerSelection, computerSelection) {
   if (player === computer) {
     return "It's a draw";
   } else {
+    if (player === "rock" || computer === "rock") {
+      if (player === "scissors") {
+        return "You lose! Rock beats scissors!";
+      } else {
+        return "You win! Rock beats scissors!";
+      }
+    }
 
+    if (player === "paper" || computer === "paper") {
+      if (computer === "scissors") {
+        return "You lose! Scissors beat paper!";
+      } else {
+        return "You win! Scissors beat paper!"
+      }
+    }
+
+    if (player === "scissors" || computer === "scissors") {
+      if (computer === "paper") {
+        return "You lose! Scissors beats paper!";
+      } else {
+        return "You win! Scissors beats paper!";
+      }
+    }
   }
 }
-
-// Paper beats rock, rock beats scissors, scissors beats paper
-// The same item makes a draw
