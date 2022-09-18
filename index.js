@@ -9,8 +9,10 @@ function playRound (playerSelection, computerSelection) {
   let player = playerSelection.toLowerCase();
   let computer = computerSelection.toLowerCase();
 
-  if (player == computer) {
+  if (player === computer) {
     return "It's a draw";
+  } else {
+
   }
 }
 
