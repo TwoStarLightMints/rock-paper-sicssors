@@ -65,11 +65,21 @@ function getCleanInput () {
   return input;
 }
 
+function displayScore (display, text) {
+  display.innerText = text;
+}
+
+const display = document.querySelector("#results");
+
 const buttons = document.querySelectorAll("button");
 buttons.forEach(button => {
   button.addEventListener(
     'click',
-    playRound
+    function (e) {
+      displayScore(
+        display,
+        playRound(this.innerText.toLowerCase(), getComputerChoice()));
+    }
   )});
 
 function game () {
