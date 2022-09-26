@@ -1,13 +1,13 @@
 function getComputerChoice () {
   // Randomly returns either 'Rock', 'Paper', or 'Scissors'
   let choice = Math.floor(Math.random() * 3);
-  let choices = ['Rock', 'Paper', 'Scissors'];
+  let choices = ['rock', 'paper', 'scissors'];
   return choices[choice];
 }
 
 function playRound (playerSelection, computerSelection) {
-  let player = playerSelection.toLowerCase();
-  let computer = computerSelection.toLowerCase();
+  let player = playerSelection;
+  let computer = computerSelection;
 
   if (player === computer) {
     return "It's a draw";
@@ -66,7 +66,11 @@ function getCleanInput () {
 }
 
 const buttons = document.querySelectorAll("button");
-buttons.forEach(button => button.addEventListener('click', playRound));
+buttons.forEach(button => {
+  button.addEventListener(
+    'click',
+    playRound
+  )});
 
 function game () {
   greet();
