@@ -65,6 +65,9 @@ function getCleanInput () {
   return input;
 }
 
+const buttons = document.querySelectorAll("button");
+buttons.forEach(button => button.addEventListener('click', playRound));
+
 function game () {
   greet();
 }
