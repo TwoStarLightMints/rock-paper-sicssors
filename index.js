@@ -67,9 +67,6 @@ function getCleanInput () {
 
 function game () {
   greet();
-  for (let i = 0; i < 5; i++) {
-    console.log(playRound(getCleanInput(), getComputerChoice()));
-  }
 }
 
 game();
