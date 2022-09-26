@@ -70,8 +70,6 @@ function game () {
   for (let i = 0; i < 5; i++) {
     console.log(playRound(getCleanInput(), getComputerChoice()));
   }
-
-  document.getElementById("tag").innerHTML = "Thanks for playing!";
 }
 
 game();
