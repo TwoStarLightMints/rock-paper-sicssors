@@ -1,3 +1,23 @@
+let playerScore = 0;
+let computerScore = 0;
+
+const display = document.querySelector("#results");
+const roundDisp = display.children[0];
+const pDisp = display.children[1];
+const cDisp = display.children[2];
+
+const buttons = document.querySelectorAll("button");
+buttons.forEach(button => {
+  button.addEventListener(
+    'click',
+    function (e) {
+      displayScore(
+          playRound(
+            this.innerText.toLowerCase(),getComputerChoice())
+        );
+    }
+  )});
+
 function getComputerChoice () {
   // Randomly returns either 'Rock', 'Paper', or 'Scissors'
   let choice = Math.floor(Math.random() * 3);
@@ -44,46 +64,24 @@ function playRound (playerSelection, computerSelection) {
   }
 }
 
-function greet () {
-  alert("Welcome to rock, paper, scissors! Please enter Rock, Paper, or Scissors.");
+function displayScore (text) {
+  roundDisp.innerText = text;
+  if (text.includes("win")) {
+    playerScore++;
+    pDisp.innerText = `Player Score: ${playerScore}`;
+    cDisp.innerText = `Computer Score: ${computerScore}`;
+  } else if (text.includes("draw")) {
+    pDisp.innerText = `Player Score: ${playerScore}`;
+    cDisp.innerText = `Computer Score: ${computerScore}`;
+  } else {
+    computerScore++;
+    pDisp.innerText = `Player Score: ${playerScore}`;
+    cDisp.innerText = `Computer Score: ${computerScore}`;
+  }
 }
-
-function getCleanInput () {
-  let clean = false;
-  let input = "";
-  
-  do {
-    input = prompt().toLowerCase();
-    if (input === "rock" || input === "scissors"|| input === "paper") {
-      clean = true;
-    } else {
-      alert("Please enter only Rock/Paper/Scissors");
-      input = "";
-    }
-  } while (!clean);
-
-  return input;
-}
-
-function displayScore (display, text) {
-  display.innerText = text;
-}
-
-const display = document.querySelector("#results");
-
-const buttons = document.querySelectorAll("button");
-buttons.forEach(button => {
-  button.addEventListener(
-    'click',
-    function (e) {
-      displayScore(
-        display,
-        playRound(this.innerText.toLowerCase(), getComputerChoice()));
-    }
-  )});
 
 function game () {
-  greet();
+  alert("Welcome to rock, paper, scissors! Please enter Rock, Paper, or Scissors.");
 }
 
 game();
